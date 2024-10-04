@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>toDoList</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script src="index.js"></script>
+
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="buttons">
+            <button class="btn add-btn" id="openModalBtn">Add Task</button>
+            <button class="btn edit-btn" id="openEditModalBtn">Edit</button>
+            <button class="btn remove-btn" id="removeTaskBtn">Delete</button>
+        </div>
+
+        <h2>Current tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Task</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Task Modal Popup -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <form id="taskForm">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+
+                <label for="taskDesc">Task Description:</label>
+                <input type="text" id="taskDesc" name="taskDesc" required>
+
+                <button type="submit" class="btn submit-btn">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal Popup -->
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <label for="editTaskName">Task Name:</label>
+                <input type="text" id="editTaskName" name="editTaskName" required>
+
+                <label for="editTaskDesc">Task Description:</label>
+                <input type="text" id="editTaskDesc" name="editTaskDesc" required>
+
+                <button type="submit" class="btn submit-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
